@@ -55,14 +55,18 @@ namespace Institute.web.Controllers
         {
             try
             {
+
+                bool isValidDate = DateTime.TryParse(professorModel.HireDate.Value.ToString(), out DateTime myDate);
+                     
                 BLL.Dto.ProfessorSaveDto professorSaveDto = new BLL.Dto.ProfessorSaveDto()
                 {
-                    HireDate = professorModel.HireDate.Value,
+                    HireDate = professorModel.HireDate,
                     FirstName = professorModel.FirstName,
                     LastName = professorModel.LastName
                 };
 
-                _service.SaveProfessor(professorSaveDto);
+                var resul = _service.SaveProfessor(professorSaveDto);
+
 
                 return RedirectToAction(nameof(Index));
             }
@@ -99,12 +103,12 @@ namespace Institute.web.Controllers
                 BLL.Dto.ProfessorUpdateDto professorUpdate = new BLL.Dto.ProfessorUpdateDto()
                 {
                     ProfessorId = professorModel.Id,
-                    HireDate = professorModel.HireDate.Value,
+                    HireDate = professorModel.HireDate,
                     FirstName = professorModel.FirstName,
                     LastName = professorModel.LastName,
                 };
 
-                this._service.UpdateProfessor(professorUpdate);
+                _service.UpdateProfessor(professorUpdate);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -133,10 +137,17 @@ namespace Institute.web.Controllers
         // POST: ProfessorController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(Professor professorModel)
         {
             try
             {
+                BLL.Dto.ProfessorRemoveDto professorUpdate = new BLL.Dto.ProfessorRemoveDto()
+                {
+                    Id = professorModel.Id,
+                };
+
+                _service.RemoveProfessor(professorUpdate);
+
                 return RedirectToAction(nameof(Index));
             }
             catch

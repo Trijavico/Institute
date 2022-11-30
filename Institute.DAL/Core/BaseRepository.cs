@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
+using System.Runtime.CompilerServices;
 
 namespace Institute.DAL.Core
 {
@@ -20,7 +21,11 @@ namespace Institute.DAL.Core
 
         public virtual TEntity GetEntity(int entityid) => this._entities.Find(entityid);
 
-        public virtual void Remove(TEntity entity) => this._entities.Remove(entity);
+        public virtual void Remove(TEntity entity)
+        {
+            this._entities.Remove(entity);
+            this._context.SaveChanges();
+        }
 
         public virtual void Save(TEntity entity) => this._entities.Add(entity);
 

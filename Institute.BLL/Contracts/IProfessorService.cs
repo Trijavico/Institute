@@ -8,7 +8,7 @@ namespace Institute.BLL.Contracts
     public interface IProfessorService : IBaseService
     {
         ProfessorSaveResponse SaveProfessor(ProfessorSaveDto professorSaveDto);
-        ProfessorUpdateResponse UpdateProfessor(ProfessorUpdateDto studentSaveDto);
-        ServiceResult RemoveProfessor(ProfessorRemoveDto studentSaveDto);
+        ProfessorUpdateResponse UpdateProfessor(ProfessorUpdateDto professorUpdateDto);
+        ServiceResult RemoveProfessor(ProfessorRemoveDto professorRemoveDto);
     }
 }
