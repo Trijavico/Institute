@@ -112,7 +112,6 @@ namespace Institute.BLL.Services
                 DAL.Entities.Professor professorToAdd = professorSaveDto.FromDtoSaveToEntity();
 
                 result.ProfessorId = professorToAdd.Id;
-                professorRepository.Save(professorToAdd);
 
                 result.Message = "Profesor agregado correctamente";
 
@@ -142,7 +141,6 @@ namespace Institute.BLL.Services
                 result.Message = "Error actualizando el estudiante";
                 this.logger.LogError($" {result.Message} {ex.Message}", ex.ToString());
             }
-
             return result;
         }
     }
