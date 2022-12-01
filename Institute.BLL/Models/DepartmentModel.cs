@@ -1,12 +1,11 @@
-﻿using Institute.DAL.Core;
+﻿
 using System.Data.SqlTypes;
 
-namespace Institute.DAL.Entities
+namespace Institute.BLL.Models
 {
-    public class Department : BaseEntity
+    public class DepartmentModel
     {
-
-        public int DepartmentID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public decimal Budget { get; set; }
         public DateTime StartDate { get; set; }

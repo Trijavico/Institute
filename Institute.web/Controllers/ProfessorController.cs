@@ -3,6 +3,7 @@ using Institute.web.Extensions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Institute.web.Models;
+using Institute.BLL.Dto.Professor;
 
 namespace Institute.web.Controllers
 {
@@ -57,8 +58,8 @@ namespace Institute.web.Controllers
             {
 
                 bool isValidDate = DateTime.TryParse(professorModel.HireDate.Value.ToString(), out DateTime myDate);
-                     
-                BLL.Dto.ProfessorSaveDto professorSaveDto = new BLL.Dto.ProfessorSaveDto()
+
+                ProfessorSaveDto professorSaveDto = new BLL.Dto.Professor.ProfessorSaveDto()
                 {
                     HireDate = professorModel.HireDate,
                     FirstName = professorModel.FirstName,
@@ -100,7 +101,7 @@ namespace Institute.web.Controllers
             try
             {
 
-                BLL.Dto.ProfessorUpdateDto professorUpdate = new BLL.Dto.ProfessorUpdateDto()
+                ProfessorUpdateDto professorUpdate = new BLL.Dto.Professor.ProfessorUpdateDto()
                 {
                     ProfessorId = professorModel.Id,
                     HireDate = professorModel.HireDate,
@@ -141,12 +142,12 @@ namespace Institute.web.Controllers
         {
             try
             {
-                BLL.Dto.ProfessorRemoveDto professorUpdate = new BLL.Dto.ProfessorRemoveDto()
+                ProfessorRemoveDto professorRemove = new BLL.Dto.Professor.ProfessorRemoveDto()
                 {
                     Id = professorModel.Id,
                 };
 
-                _service.RemoveProfessor(professorUpdate);
+                _service.RemoveProfessor(professorRemove);
 
                 return RedirectToAction(nameof(Index));
             }

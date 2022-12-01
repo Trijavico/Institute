@@ -12,28 +12,28 @@ namespace Institute.BLL.Validations
             if (string.IsNullOrEmpty(person.FirstName))
             {
                 result.Success = false;
-                result.Message = "El nombre es requerido.";
+                result.Message = "The name is required.";
                 return result;
             }
 
             if (string.IsNullOrEmpty(person.LastName))
             {
                 result.Success = false;
-                result.Message = "El apellido es requerido.";
+                result.Message = "The lastname is required.";
                 return result;
             }
 
             if (person.FirstName.Length > 50)
             {
                 result.Success = false;
-                result.Message = "La longitud del nombre es inválida.";
+                result.Message = "The name length is invalid";
                 return result;
             }
 
             if (person.LastName.Length > 50)
             {
                 result.Success = false;
-                result.Message = "La longitud del apellido es inválida.";
+                result.Message = "The lastname length is invalid.";
                 return result;
             }
 

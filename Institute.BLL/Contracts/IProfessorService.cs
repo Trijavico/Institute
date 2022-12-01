@@ -1,5 +1,5 @@
-using Institute.BLL.Core;
-using Institute.BLL.Dto;
+﻿using Institute.BLL.Core;
+using Institute.BLL.Dto.Professor;
 using Institute.BLL.Responses;
 
 namespace Institute.BLL.Contracts

@@ -18,10 +18,12 @@ builder.Services.AddScoped(typeof(ILoggerService<>), typeof(LoggerService<>));
 // Repositories
 
 builder.Services.AddScoped<IProfessorRepository, ProfessorRepository>();
+builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 
 // Services
 
 builder.Services.AddTransient<IProfessorService, ProfessorService>();
+builder.Services.AddTransient<IDepartmentService, DepartmentService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

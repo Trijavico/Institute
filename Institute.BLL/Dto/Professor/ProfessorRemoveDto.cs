@@ -1,6 +1,6 @@
 ﻿using Institute.BLL.Core;
 
-namespace Institute.BLL.Dto
+namespace Institute.BLL.Dto.Professor
 {
     public class ProfessorRemoveDto : DtoAudit
     {

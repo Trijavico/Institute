@@ -1,5 +1,4 @@
-﻿
-using Institute.BLL.Dto;
+﻿using Institute.BLL.Dto.Professor;
 using Institute.DAL.Entities;
 
 namespace Institute.BLL.Extensions

@@ -1,7 +1,6 @@
-﻿
-using Institute.BLL.Core;
+﻿using Institute.BLL.Core;
 
-namespace Institute.BLL.Dto
+namespace Institute.BLL.Dto.Professor
 {
     public class ProfessorSaveDto : ProfessorDtoBase
     {

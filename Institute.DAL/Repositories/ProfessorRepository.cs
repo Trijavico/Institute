@@ -41,7 +41,7 @@ namespace Institute.DAL.Repositories
             }
             catch (Exception ex)
             {
-                logger.LogError($"Error actualizando el profesor {ex.Message}", ex.ToString());
+                logger.LogError($"Error updating the professor {ex.Message}", ex.ToString());
                 throw ex;
             }
         }

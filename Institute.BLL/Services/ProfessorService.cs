@@ -1,6 +1,6 @@
 ﻿using Institute.BLL.Contracts;
 using Institute.BLL.Core;
-using Institute.BLL.Dto;
+using Institute.BLL.Dto.Professor;
 using Institute.BLL.Extensions;
 using Institute.BLL.Responses;
 using Institute.BLL.Validations;
@@ -42,7 +42,7 @@ namespace Institute.BLL.Services
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Error obtiendo los profesores";
+                result.Message = "Error getting the professors";
                 this.logger.LogError($" {result.Message} {ex.Message}", ex.ToString());
             }
 
@@ -69,7 +69,7 @@ namespace Institute.BLL.Services
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Error obtiendo el profesor";
+                result.Message = "Error getting the professor";
                 this.logger.LogError($" {result.Message} {ex.Message}", ex.ToString());
             }
 
@@ -89,17 +89,20 @@ namespace Institute.BLL.Services
 
                 professorRepository.Remove(professorToRemove);
 
-                result.Message = "Estudiante eliminado correctamente";
+                result.Message = "Professor removed successfully";
             }
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Error eliminando el estudiante";
+                result.Message = "Error removin the professor";
                 this.logger.LogError($" {result.Message} {ex.Message}", ex.ToString());
             }
 
             return result;
         }
+
+
+
 
         public ProfessorSaveResponse SaveProfessor(ProfessorSaveDto professorSaveDto)
         {
@@ -117,7 +120,7 @@ namespace Institute.BLL.Services
                     professorRepository.Save(professorToAdd);
                     result.ProfessorId = professorToAdd.Id;
 
-                    result.Message = "Profesor agregado correctamente";
+                    result.Message = "Professor added successfully";
 
                 }
                 return result;
@@ -125,11 +128,12 @@ namespace Institute.BLL.Services
             catch(Exception ex) 
             {
                 result.Success = false;
+                result.Message = "Error adding the professor";
                 logger.LogError(ex.Message,ex.ToString());
             }
 
             return result;
-
+          
         }
 
 
@@ -148,7 +152,7 @@ namespace Institute.BLL.Services
 
                     professorRepository.Update(professorToUpdate);
 
-                    result.Message = "Estudiante actualizado correctamente";
+                    result.Message = "Professor updated successfully";
                 }
 
                 return result;
@@ -156,7 +160,7 @@ namespace Institute.BLL.Services
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Error actualizando el estudiante";
+                result.Message = "Error updating the professor";
                 this.logger.LogError($" {result.Message} {ex.Message}", ex.ToString());
             }
             return result;

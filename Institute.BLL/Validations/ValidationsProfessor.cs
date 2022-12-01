@@ -28,7 +28,7 @@ namespace Institute.BLL.Validations
                         && st.HireDate == professorBase.HireDate))
                     {
                         result.Success = false;
-                        result.Message = "Este professor ya se encuentra registrado.";
+                        result.Message = "This professor already exists.";
                         return result;
                     }
 
@@ -36,7 +36,7 @@ namespace Institute.BLL.Validations
                 else
                 {
                     result.Success = false;
-                    result.Message = "La fecha de contratacion es requerida.";
+                    result.Message = "The hire date is required.";
                     return result;
                 }
             }
