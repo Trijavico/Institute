@@ -21,6 +21,7 @@ namespace Institute.BLL.Extensions
         {
             return new Professor()
             {
+                Id = professor.ProfessorId,
                 FirstName = professor.FirstName,
                 LastName = professor.LastName,
                 HireDate = professor.HireDate
