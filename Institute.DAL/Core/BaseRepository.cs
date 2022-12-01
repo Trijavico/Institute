@@ -28,7 +28,6 @@ namespace Institute.DAL.Core
         }
 
         public virtual void Save(TEntity entity) => this._entities.Add(entity);
-
         public virtual void Save(TEntity[] entities)
         {
             this._entities.AddRange(entities);

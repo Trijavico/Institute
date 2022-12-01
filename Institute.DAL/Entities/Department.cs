@@ -1,8 +1,7 @@
 ﻿
-
 namespace Institute.DAL.Entities
 {
-    public class Department
+    public class Department : BaseEntity
     {
     }
 }

@@ -130,7 +130,6 @@ namespace Institute.BLL.Services
 
             return result;
 
-          
         }
 
 
