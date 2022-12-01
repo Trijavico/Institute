@@ -1,6 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using System.Diagnostics.Contracts;
-using Microsoft.Extensions.Logging;
 using Institute.BLL.Contracts;
 using Institute.BLL.Core;
 

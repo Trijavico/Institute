@@ -18,5 +18,7 @@ namespace Institute.DAL.Context
         }
 
         public DbSet<Professor> Instructors { get; set; }
+        public DbSet<Student> Students { get; set; }
+
     }
 }
