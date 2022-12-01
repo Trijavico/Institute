@@ -36,7 +36,7 @@ namespace Institute.BLL.Services
                     HireDate = (DateTime)item.HireDate,
                     FirstName = item.FirstName,
                     LastName = item.LastName
-                }).ToList();
+                }).OrderByDescending(item => item.HireDate).ToList();
 
             }
             catch (Exception ex)
@@ -105,19 +105,32 @@ namespace Institute.BLL.Services
         {
             ProfessorSaveResponse result = new ProfessorSaveResponse();
 
-            result = (ProfessorSaveResponse) ValidationsProfessor.IsValidProfessor(professorSaveDto, professorRepository);
+            var resultResultValid = ValidationsProfessor.IsValidProfessor(professorSaveDto, professorRepository);
 
-            if (result.Success)
+            try
             {
-                DAL.Entities.Professor professorToAdd = professorSaveDto.FromDtoSaveToEntity();
+                if (resultResultValid.Success)
+                {
 
-                result.ProfessorId = professorToAdd.Id;
-                professorRepository.Save(professorToAdd);
+                    DAL.Entities.Professor professorToAdd = professorSaveDto.FromDtoSaveToEntity();
 
-                result.Message = "Profesor agregado correctamente";
+                    professorRepository.Save(professorToAdd);
+                    result.ProfessorId = professorToAdd.Id;
 
+                    result.Message = "Profesor agregado correctamente";
+
+                }
+                return result;
             }
+            catch(Exception ex) 
+            {
+                result.Success = false;
+                logger.LogError(ex.Message,ex.ToString());
+            }
+
             return result;
+
+          
         }
 
 
@@ -126,15 +139,17 @@ namespace Institute.BLL.Services
         {
             ProfessorUpdateResponse result = new ProfessorUpdateResponse();
 
-            result = (ProfessorUpdateResponse)ValidationsProfessor.IsValidProfessor(professorUpdateDto, this.professorRepository);
+            var resultValid = ValidationsProfessor.IsValidProfessor(professorUpdateDto, professorRepository);
 
             try
             {
-                DAL.Entities.Professor professorToUpdate = professorUpdateDto.FromDtoUpdateToEntity();
+                if(resultValid.Success)
+                {
+                    DAL.Entities.Professor professorToUpdate = professorUpdateDto.FromDtoUpdateToEntity();
 
-                professorRepository.Update(professorToUpdate);
+                    professorRepository.Update(professorToUpdate);
 
-                result.Message = "Profesor actualizado correctamente";
+                result.Message = "Estudiante actualizado correctamente";
             }
             catch (Exception ex)
             {
@@ -142,7 +157,6 @@ namespace Institute.BLL.Services
                 result.Message = "Error actualizando el profesor";
                 this.logger.LogError($" {result.Message} {ex.Message}", ex.ToString());
             }
-
             return result;
         }
     }
