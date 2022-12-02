@@ -122,44 +122,5 @@ namespace Institute.web.Controllers
                 return View();
             }
         }
-
-        // GET: DepartmentController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            var dpto = (BLL.Models.DepartmentModel)_service.GetById(id).Data;
-
-            Department dptoModel = new Department()
-            {
-                Id = dpto.Id,
-                Name = dpto.Name,
-                Budget = dpto.Budget,
-                StartDate = dpto.StartDate,
-                Administrator = dpto.Administrator
-            };
-
-            return View(dptoModel);
-        }
-
-        // POST: DepartmentController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(Department dptoModel)
-        {
-            try
-            {
-                DepartmentRemoveDto departmentRemove = new BLL.Dto.Department.DepartmentRemoveDto()
-                {
-                    DepartmentID = dptoModel.Id,
-                };
-
-                _service.RemoveDepartment(departmentRemove);
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

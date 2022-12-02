@@ -119,42 +119,5 @@ namespace Institute.web.Controllers
             }
         }
 
-        // GET: ProfessorController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            var pf = (BLL.Models.ProfessorModel)_service.GetById(id).Data;
-
-            Professor Modelpf = new Professor()
-            {
-                Id = pf.Id,
-                FirstName = pf.FirstName,
-                LastName = pf.LastName,
-                HireDate = pf.HireDate
-            };
-
-            return View(Modelpf);
-        }
-
-        // POST: ProfessorController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(Professor professorModel)
-        {
-            try
-            {
-                ProfessorRemoveDto professorRemove = new BLL.Dto.Professor.ProfessorRemoveDto()
-                {
-                    Id = professorModel.Id,
-                };
-
-                _service.RemoveProfessor(professorRemove);
-
-                return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
-        }
-    }
 }
