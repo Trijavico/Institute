@@ -20,7 +20,6 @@ namespace Institute.BLL.Services
         private readonly ICourseRepository CourseRepository;
         private readonly IDepartmentRepository departmentRepository;
         private readonly ILoggerService<CourseService> loggerService;
-        private object courseRepository;
 
         public CourseService(ICourseRepository CourseRepository,
                               IDepartmentRepository departmentRepository,
@@ -54,10 +53,6 @@ namespace Institute.BLL.Services
             return result;
         }
 
-        public ServiceResult GetCoursesByDeparments()
-        {
-            throw new System.NotImplementedException();
-        }
 
         public ServiceResult GetAll()
         {

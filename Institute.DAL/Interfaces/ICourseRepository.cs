@@ -1,4 +1,3 @@
-﻿
 using Institute.DAL.Core;
 using Institute.DAL.Entities;
 
