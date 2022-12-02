@@ -69,9 +69,9 @@ namespace Institute.BLL.Services
                 {
                     Id = department.DepartmentID,
                     Name = department.Name,
-                    Budget= department.Budget,
+                    Budget = department.Budget,
                     StartDate = department.StartDate,
-                    Administrator= department.Administrator
+                    Administrator = department.Administrator
                 };
 
             }

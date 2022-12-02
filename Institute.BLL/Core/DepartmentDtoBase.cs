@@ -1,4 +1,4 @@
-﻿using System.Data.SqlTypes;
+﻿
 
 namespace Institute.BLL.Core
 {
