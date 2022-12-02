@@ -47,7 +47,7 @@ namespace Institute.web.Controllers
         {
             try
             {
-                StudentSaveDto saveStudnetDto = new Institute.BLL.Dto.StudentSaveDto()
+                StudentSaveDto saveStudnetDto = new Institute.BLL.Dto.Student.StudentSaveDto()
                 {
                     FirstName = studentModel.FirstName,
                     LastName = studentModel.LastName,
@@ -91,7 +91,7 @@ namespace Institute.web.Controllers
             {
                 var myModel = studentModel;
 
-                StudentUpdateDto studentUpdate = new BLL.Dto.StudentUpdateDto()
+                StudentUpdateDto studentUpdate = new BLL.Dto.Student.StudentUpdateDto()
                 {
                     Id = studentModel.Id,
                     FirstName = studentModel.FirstName,

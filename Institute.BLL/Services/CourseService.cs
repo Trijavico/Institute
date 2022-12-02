@@ -53,19 +53,18 @@ namespace Institute.BLL.Services
             return result;
         }
 
-
         public ServiceResult GetAll()
         {
             ServiceResult result = new ServiceResult();
             try
             {
                 var query = (from course in CourseRepository.GetEntities()
-                             join depto in this.departmentRepository.GetEntities() on course.DepartmentID equals depto.DepartmentID
+                             join department in departmentRepository.GetEntities() on course.DepartmentID equals department.DepartmentID
                              select new Models.CourseModel()
                              {
                                  Credits = course.Credits,
                                  CourseId = course.CourseID,
-                                 DepartmentId = (int)depto.DepartmentID,
+                                 DepartmentId = department.DepartmentID,
                                  Title = course.Title
                              }).ToList();
 
