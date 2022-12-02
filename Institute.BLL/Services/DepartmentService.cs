@@ -50,7 +50,7 @@ namespace Institute.BLL.Services
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Error obtiendo los departamentos";
+                result.Message = "Error getting the departments";
                 this.logger.LogError($" {result.Message} {ex.Message}", ex.ToString());
             }
 
@@ -78,7 +78,7 @@ namespace Institute.BLL.Services
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Error obtiendo el departamento";
+                result.Message = "Error getting the department";
                 this.logger.LogError($" {result.Message} {ex.Message}", ex.ToString());
             }
             return result;
@@ -124,7 +124,7 @@ namespace Institute.BLL.Services
                     departmentRepository.Save(departmentToAdd);
                     result.DepartmentID = departmentToAdd.DepartmentID;
 
-                    result.Message = "Departamento agregado correctamente";
+                    result.Message = "Department saved successfully";
 
                 }
                 return result;
@@ -152,7 +152,7 @@ namespace Institute.BLL.Services
 
                     departmentRepository.Update(departmentToUpdate);
 
-                    result.Message = "Estudiante actualizado correctamente";
+                    result.Message = "Department updated successfully";
                 }
 
                 return result;
@@ -160,7 +160,7 @@ namespace Institute.BLL.Services
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Error actualizando el estudiante";
+                result.Message = "Error updating the deparment";
                 this.logger.LogError($" {result.Message} {ex.Message}", ex.ToString());
             }
             return result;
