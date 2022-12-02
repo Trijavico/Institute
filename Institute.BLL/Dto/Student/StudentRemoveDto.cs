@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Institute.BLL.Dto
+namespace Institute.BLL.Dto.Student
 {
     public class StudentRemoveDto
     {

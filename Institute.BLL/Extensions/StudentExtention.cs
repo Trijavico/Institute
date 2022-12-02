@@ -1,4 +1,4 @@
-﻿using Institute.BLL.Dto;
+﻿using Institute.BLL.Dto.Student;
 using Institute.DAL.Entities;
 
 namespace Institute.BLL.Extentions

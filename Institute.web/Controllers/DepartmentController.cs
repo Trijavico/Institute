@@ -3,9 +3,9 @@ using Institute.web.Extensions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Institute.web.Models;
-using Institute.BLL.Dto.Professor;
 using Institute.BLL.Models;
 using Institute.BLL.Dto.Department;
+using Institute.web.Extensions;
 
 namespace Institute.web.Controllers
 {

@@ -4,6 +4,7 @@ using Institute.Web.Extentions;
 using Institute.BLL.Models;
 using Institute.DAL.Entities;
 using Institute.web.Models;
+using Institute.BLL.Dto.Student;
 
 namespace Institute.web.Controllers
 {
@@ -46,7 +47,7 @@ namespace Institute.web.Controllers
         {
             try
             {
-                Institute.BLL.Dto.StudentSaveDto saveStudnetDto = new Institute.BLL.Dto.StudentSaveDto()
+                StudentSaveDto saveStudnetDto = new Institute.BLL.Dto.StudentSaveDto()
                 {
                     FirstName = studentModel.FirstName,
                     LastName = studentModel.LastName,
@@ -90,7 +91,7 @@ namespace Institute.web.Controllers
             {
                 var myModel = studentModel;
 
-                BLL.Dto.StudentUpdateDto studentUpdate = new BLL.Dto.StudentUpdateDto()
+                StudentUpdateDto studentUpdate = new BLL.Dto.StudentUpdateDto()
                 {
                     Id = studentModel.Id,
                     FirstName = studentModel.FirstName,
