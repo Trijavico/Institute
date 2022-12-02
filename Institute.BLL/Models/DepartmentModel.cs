@@ -1,6 +1,7 @@
-﻿namespace Institute.web.Models
+﻿
+namespace Institute.BLL.Models
 {
-    public class Department
+    public class DepartmentModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
