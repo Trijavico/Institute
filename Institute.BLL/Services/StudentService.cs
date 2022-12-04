@@ -1,6 +1,6 @@
 ﻿using Institute.BLL.Contracts;
 using Institute.BLL.Core;
-using Institute.BLL.Dto;
+using Institute.BLL.Dto.Student;
 using Institute.BLL.Extentions;
 using Institute.BLL.Models;
 using Institute.BLL.Responses;

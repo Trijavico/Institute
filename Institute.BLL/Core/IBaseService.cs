@@ -1,4 +1,7 @@
-﻿namespace Institute.BLL.Core
+﻿using Institute.BLL.Dto.Course;
+using Institute.BLL.Responses;
+
+namespace Institute.BLL.Core
 {
     public interface IBaseService
     {

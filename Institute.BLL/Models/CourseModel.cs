@@ -1,12 +1,12 @@
 ﻿
-
-namespace Institute.DAL.Entities
+namespace Institute.BLL.Models
 {
-    public class Course : Core.BaseEntity
+    public class CourseModel
     {
         public string Title { get; set; }
         public int Credits { get; set; }
         public int CourseID { get; set; }
-        public int DepartmentID { get; set; }
+        public int DepartmentId { get; set; }
+
     }
 }
