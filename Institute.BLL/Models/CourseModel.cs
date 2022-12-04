@@ -6,6 +6,6 @@ namespace Institute.BLL.Models
         public string Title { get; set; }
         public int Credits { get; set; }
         public int CourseId { get; set; }
-        public int DepartmentId { get; set; }
+        public int DepartmentID { get; set; }
     }
 }

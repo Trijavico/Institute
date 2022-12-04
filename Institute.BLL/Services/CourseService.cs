@@ -64,7 +64,7 @@ namespace Institute.BLL.Services
                              {
                                  Credits = course.Credits,
                                  CourseId = course.CourseID,
-                                 DepartmentId = department.DepartmentID,
+                                 DepartmentID = department.DepartmentID,
                                  Title = course.Title
                              }).ToList();
 
