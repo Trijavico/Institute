@@ -19,6 +19,7 @@ builder.Services.AddScoped(typeof(ILoggerService<>), typeof(LoggerService<>));
 
 builder.Services.AddScoped<IProfessorRepository, ProfessorRepository>();
 builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+
 builder.Services.AddScoped<IStudentRepository,StudentRepository>();
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 
