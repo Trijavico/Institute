@@ -20,7 +20,6 @@ namespace Institute.BLL.Services
         private readonly ICourseRepository CourseRepository;
         private readonly IDepartmentRepository departmentRepository;
         private readonly ILoggerService<CourseService> loggerService;
-        private object courseRepository;
 
         public CourseService(ICourseRepository CourseRepository,
                               IDepartmentRepository departmentRepository,
@@ -54,23 +53,18 @@ namespace Institute.BLL.Services
             return result;
         }
 
-        public ServiceResult GetCoursesByDeparments()
-        {
-            throw new System.NotImplementedException();
-        }
-
         public ServiceResult GetAll()
         {
             ServiceResult result = new ServiceResult();
             try
             {
                 var query = (from course in CourseRepository.GetEntities()
-                             join depto in this.departmentRepository.GetEntities() on course.DepartmentID equals depto.DepartmentID
+                             join department in departmentRepository.GetEntities() on course.DepartmentID equals department.DepartmentID
                              select new Models.CourseModel()
                              {
                                  Credits = course.Credits,
-                                 CourseID = course.CourseID,
-                                 DepartmentId = (int)depto.DepartmentID,
+                                 CourseId = course.CourseID,
+                                 DepartmentID = department.DepartmentID,
                                  Title = course.Title
                              }).ToList();
 

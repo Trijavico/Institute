@@ -15,6 +15,5 @@ namespace Institute.DAL.Entities
         public decimal Budget { get; set; }
         public DateTime StartDate { get; set; }
         public int Administrator { get; set; }
-        public int CourseID { get; set; }
     }
 }

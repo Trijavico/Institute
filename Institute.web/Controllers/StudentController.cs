@@ -91,7 +91,7 @@ namespace Institute.web.Controllers
             {
                 var myModel = studentModel;
 
-                BLL.Dto.Student.StudentUpdateDto studentUpdate = new BLL.Dto.Student.StudentUpdateDto()
+                StudentUpdateDto studentUpdate = new BLL.Dto.Student.StudentUpdateDto()
                 {
                     Id = studentModel.Id,
                     FirstName = studentModel.FirstName,

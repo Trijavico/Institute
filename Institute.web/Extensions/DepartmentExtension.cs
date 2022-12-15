@@ -1,5 +1,4 @@
-﻿using Institute.BLL.Models;
-using Institute.web.Models;
+﻿using Institute.web.Models;
 using System.Data.SqlTypes;
 
 namespace Institute.web.Extensions

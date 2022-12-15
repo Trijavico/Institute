@@ -40,7 +40,7 @@ namespace Institute.web.Controllers
             {
                 Title = course.Title,
                 Credits = course.Credits,
-                CourseID = course.CourseID,
+                CourseID = course.CourseId,
             };
 
             return View(courseModel);
@@ -85,7 +85,7 @@ namespace Institute.web.Controllers
             {
                 Title = course.Title,
                 Credits = course.Credits,
-                CourseID = course.CourseID
+                CourseID = course.CourseId
             };
 
             return View(courseModel);

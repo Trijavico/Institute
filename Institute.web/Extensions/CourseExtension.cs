@@ -1,18 +1,16 @@
-﻿using Institute.BLL.Models;
-using Institute.web.Models;
-using System.Data.SqlTypes;
+﻿using Institute.web.Models;
 
 namespace Institute.web.Extensions
 {
     public static class CourseExtension
     {
-        public static List<web.Models.Course> ConvertToModel(this List<CourseModel> courseModel)
+        public static List<Course> ConvertToModel(this List<Institute.BLL.Models.CourseModel> courseModel)
         {
             var courses = courseModel.Select(item => new Course()
             {
+                Id = item.CourseId,
                 Title = item.Title,
-                Credits = item.Credits,
-                CourseID = item.CourseID
+                Credits = item.Credits
             }).ToList();
 
             return courses;
